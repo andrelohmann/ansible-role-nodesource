@@ -1,0 +1,26 @@
+---
+
+- name: APT | Update cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  changed_when: false
+
+- name: APT | Install nodesource dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - curl
+
+- name: Install nodejs repo
+  shell: "curl -sL https://deb.nodesource.com/setup_{{ nodesource_nodejs_version }}.x | sudo -E bash -"
+
+- name: APT | Install nodejs
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - nodejs
+
+...
