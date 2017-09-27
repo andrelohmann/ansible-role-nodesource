@@ -13,16 +13,8 @@
   with_items:
   - curl
 
-#- name: Install nodejs repo
-#  shell: "curl -sL https://deb.nodesource.com/setup_{{ nodesource_nodejs_version }}.x | sudo -E bash -"
-
-- name: Download nodejs installer
-  get_url:
-    url: "https://deb.nodesource.com/setup_{{ nodesource_nodejs_version }}.x"
-    dest: /tmp/nodejs-installer.sh
-
-- name: Execute nodejs-installer.sh
-  script: /tmp/nodejs-installer.sh
+- name: Install nodejs repo
+  shell: "curl -sL https://deb.nodesource.com/setup_{{ nodesource_nodejs_version }}.x | sudo -E bash -"
 
 - name: APT | Install nodejs
   apt:
