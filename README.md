@@ -22,7 +22,7 @@ Example Playbook
 
     - hosts: nodejs
       roles:
-         - { role: andrelohmann.ansible-role-nodesource }
+         - { role: andrelohmann.nodesource }
 
 License
 -------
