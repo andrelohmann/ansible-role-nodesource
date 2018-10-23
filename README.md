@@ -15,7 +15,7 @@ Role Variables
 
 The default set of variables defines the node version and needs at best to be overwritten in group_vars/host_vars
 
-    nodesource_nodejs_version: '6'
+    nodesource_nodejs_version: '8'
 
 Example Playbook
 ----------------
