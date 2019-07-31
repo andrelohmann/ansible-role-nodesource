@@ -1,0 +1,20 @@
+---
+
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: install packages
+  yum:
+    name: "curl"
+    state: latest
+
+- name: Install nodejs repo
+  shell: "curl -sL https://rpm.nodesource.com/setup_{{ nodesource_nodejs_version }}.x | bash -"
+
+- name: install packages
+  yum:
+    name: "nodejs"
+    state: latest
+...
