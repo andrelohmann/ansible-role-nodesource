@@ -1,0 +1,22 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+
+  - name: Run nodejs --version
+    ansible.builtin.shell: nodejs --version
+    args:
+      executable: /bin/bash
+    register: nodejs_version
+
+  - name: dump nodejs_version
+    ansible.builtin.debug:
+      var: nodejs_version
+
+  - name: Assert nodejs_version to include v16
+    ansible.builtin.assert:
+      that: "'v16.' in nodejs_version.stdout"
+...
