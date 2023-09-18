@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    # bionic only supports v16
+    # https://github.com/nodesource/distributions#supported-versions
+    nodesource_nodejs_version: '16'
+  tasks:
+  - name: "Include andrelohmann.nodesource"
+    include_role:
+      name: "andrelohmann.nodesource"
+...
