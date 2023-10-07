@@ -2,7 +2,6 @@
 galaxy_info:
   role_name: nodesource
   author: andrelohmann
-  namespace: andrelohmann
   description: ansible galaxy role to install nodejs from nodesource
   company: CloudSails GmbH
 
