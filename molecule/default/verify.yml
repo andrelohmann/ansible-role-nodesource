@@ -16,7 +16,7 @@
     ansible.builtin.debug:
       var: nodejs_version
 
-  - name: Assert nodejs_version to include v16
+  - name: Assert nodejs_version to include v20
     ansible.builtin.assert:
-      that: "'v16.' in nodejs_version.stdout"
+      that: "'v20.' in nodejs_version.stdout"
 ...
