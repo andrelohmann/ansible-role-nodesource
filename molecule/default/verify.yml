@@ -11,12 +11,13 @@
     args:
       executable: /bin/bash
     register: nodejs_version
+    changed_when: false
 
-  - name: dump nodejs_version
+  - name: Dump nodejs_version
     ansible.builtin.debug:
       var: nodejs_version
 
-  - name: Assert nodejs_version to include v20
+  - name: Assert nodejs_version to include v22
     ansible.builtin.assert:
-      that: "'v20.' in nodejs_version.stdout"
+      that: "'v22.' in nodejs_version.stdout"
 ...

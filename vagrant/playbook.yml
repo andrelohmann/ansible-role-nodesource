@@ -1,12 +1,13 @@
 ---
-- hosts: all
+- name: Install
+  hosts: all
   become: true
-  become_method: sudo
+  become_method: ansible.builtin.sudo
 
   vars:
-    nodesource_nodejs_version: '20'
+    nodesource_nodejs_version: '22'
 
   roles:
-  - andrelohmann.root_colored_prompt
-  - ansible-role-nodesource
+  - name: andrelohmann.root_colored_prompt
+  - name: ansible-role-nodesource
 ...
