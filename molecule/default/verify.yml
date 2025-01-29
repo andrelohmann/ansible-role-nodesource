@@ -11,8 +11,9 @@
     args:
       executable: /bin/bash
     register: nodejs_version
+    changed_when: false
 
-  - name: dump nodejs_version
+  - name: Dump nodejs_version
     ansible.builtin.debug:
       var: nodejs_version
 
